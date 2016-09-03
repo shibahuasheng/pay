@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="lib/weui.min.css">
+    <link rel="stylesheet" href="css/jquery-weui.css">
+</head>
+<body>
+<div class="weui_tab_bd" id="mylist">
+
+</div>
+<button value="test" onclick="test()"></button>
+<script src="lib/jquery-2.1.4.js"></script>
+<script type="text/html" id="myask">
+    <a class="weui_cell" href="javascript:;">
+        <div class="weui_cell_hd toname">XXXX:</div>
+        <div class="weui_cell_bd weui_cell_primary" >
+            <p class="question">XXXXXX</p>
+        </div>
+        <div class="weui_cell_ft"><small  class="flag" id="flag">未被回答</small></div>
+    </a>
+</script>
+<script>
+    getallask();
+    function getallask()
+    {
+        $.getJSON("http://h5edu.applinzi.com/asklist.php?uid=74",
+            null,function(dat){
+                    $("#mylist").append("<p>test</p>");
+        var list=$("div").addClass("weui_cells").addClass("weui_cells_access");
+        for(var i=0;i<dat.length;i++)
+        { var newrow=$($("#myask").html());
+            $(".toname",newrow).html(dat[i].nickname);
+            $(".question",newrow).html(dat[i].question);
+            $(".flat",newrow).html(dat[i].flag==0?"未被回答":"已经回答");
+            list.append(newrow);
+        }
+
+        list.appendTo("#mylist");
+    });
+    }
+</script>
+</body>
+</html>

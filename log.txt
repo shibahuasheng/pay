@@ -1,0 +1,7 @@
+<?php exit();?><xml><ToUserName><![CDATA[gh_9c1bf180d3fc]]></ToUserName>
+<FromUserName><![CDATA[osR79wmDR0mlpcrIb9kFMrO08Sn4]]></FromUserName>
+<CreateTime>1472685113</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[h5edu.applinzi.com]]></Content>
+<MsgId>6325134398048590772</MsgId>
+</xml>
